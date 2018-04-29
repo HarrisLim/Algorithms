@@ -1,4 +1,4 @@
-# 알고리즘 문제 정리
+# 알고리즘 푼 문제 기록
 ### 푼 문제 사이트
   - [백준](https://www.acmicpc.net)
   - [Programmers](https://programmers.co.kr)
