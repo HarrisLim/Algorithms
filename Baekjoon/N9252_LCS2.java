@@ -11,7 +11,7 @@
 		LCS가 여러가지인 경우에는 아무거나 출력한다.
 */
 
-import java.io.*;
+import java.io.*; 
 import java.util.Vector;
 
 class LCS2 {
