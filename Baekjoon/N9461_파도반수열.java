@@ -39,15 +39,17 @@ class Padoban {
 				if(i==8) dp[i]=5;
 				if(i==9) dp[i]=7;
 				if(i==10) dp[i]=9;
-				if(i>=11) dp[i]=0;
 			}
 		}catch(IOException ie){}
 	}
 	long loop(){
 		if(n<=10) return dp[n];
-		for(int i=11; i<=n; i++) {
-			dp[i] = dp[i-5]+dp[i-1];
-			if(i==n) break;
+		else if (dp[n]!=0) return dp[n];
+		else {
+			for(int i=11; i<=n; i++) {
+				dp[i] = dp[i-5]+dp[i-1];
+				if(i==n) break;
+			}
 		}
 		return dp[n];
 	}
