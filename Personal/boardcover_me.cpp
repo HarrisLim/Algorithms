@@ -13,7 +13,7 @@ const int coverType[4][3][2] = {
     {{0,0}, {1,0}, {1,1}},
     {{0,0}, {1,0}, {0,1}},
     {{0,0}, {1,0}, {1,-1}}
-};
+}; 
 
 bool set(int y, int x, int type, vector<vector<int>>& board, int delta)
 {
