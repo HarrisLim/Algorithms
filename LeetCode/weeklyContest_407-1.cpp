@@ -38,3 +38,12 @@ public:
         return ret;
     }
 };
+
+/* this is the code from almost leetcoder 
+    so simple, when I sat if after contest, I was shocked.
+    why did I think about bit operator? keep going hard!!
+*/
+// compare n and k using AND operator.
+if((n&k) == k)
+    return __builtin_popcount(n^k); // __builtin_popcount return the number of 1, so calculate n and k using XOR operator.
+return -1;
