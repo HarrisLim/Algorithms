@@ -32,7 +32,7 @@ public:
             if(BinN.at(i) == 1 && BinN.at(i) != BinK.at(i))
                 ret++;
             if(BinN.at(i) == 0 && BinK.at(i) == 1)
-                return -1;
+                return -1; 
         }
         
         return ret;
