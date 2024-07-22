@@ -1,4 +1,4 @@
-# Algorithms I solved
+# Algorithm Problems I solved
 ### WebSite
   - [BaekJoon](https://www.acmicpc.net)
   - [CodeUp](https://codeup.kr)  
