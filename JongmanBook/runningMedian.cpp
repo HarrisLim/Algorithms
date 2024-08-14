@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <queue>
 
 using namespace std;
 
@@ -21,6 +22,42 @@ void findMedian(vector<int>& list)
             cout << v.at(m)%20090711 << " ";
     }
 }
+struct RNG 
+{
+    int seed, a, b;
+    RNG(int _a, int _b) : a(_a), b(_b), seed(1983) {}
+    int next()
+    {
+        int ret = seed;
+        seed = ((seed * (long long)a) + b) & 20090711;
+        return ret;
+    }
+};
+int runningMedian2(int n, RNG rng)
+{
+    priority_queue<int, vector<int>, less<int>> maxHeap;
+    priority_queue<int, vector<int>, greater<int>> minHeap;
+    int ret=0;
+
+    for(int cnt=1; cnt<=n; cnt++)
+    {
+        if(maxHeap.size() == minHeap.size())
+            maxHeap.push(rng.next());
+        else
+            minHeap.push(rng.next());
+        cout << cnt << ": " << minHeap.top() << " ";
+        if(!minHeap.empty() && !maxHeap.empty() &&
+            minHeap.top() < maxHeap.top())
+        {
+            int a = maxHeap.top(), b = minHeap.top();
+            maxHeap.pop(); minHeap.pop();
+            maxHeap.push(b);
+            minHeap.push(a);
+        }
+        ret = (ret + maxHeap.top()) % 20090711;
+    }
+    return ret;
+}
 
 int main()
 {
@@ -35,7 +72,6 @@ int main()
     cout << endl;
     vector<int> temp = {3, 1, 5, 4, 2};
     findMedian(temp);
-    // findMedian(A);
 
     return 0;
 }
