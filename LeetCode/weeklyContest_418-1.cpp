@@ -1,7 +1,7 @@
 class Solution {
 public:
     string toBinary(int n)
-    {
+    {    
         string str="";
         while(n>0)
         {
